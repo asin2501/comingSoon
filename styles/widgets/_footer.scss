@@ -1,0 +1,29 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-inner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 34px;
+    padding-right: 42px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @include breakpoint(medium){
+        justify-content:center;
+        padding-right: 20px;
+        padding-bottom:22px;
+        padding-left: 20px;
+    }
+
+}
+

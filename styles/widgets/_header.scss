@@ -1,0 +1,107 @@
+.header {
+    position: absolute;
+    box-sizing: border-box;
+    top:0;
+    left:0;
+    width:100%;
+    padding-top: 38px;
+    padding-bottom: 20px;
+    padding-right: 35px;
+    padding-left: 35px;
+    z-index:1;
+
+    @include breakpoint(medium){
+        padding-top:20px;
+        padding-bottom:10px;
+    }
+
+    @include breakpoint(small){
+        @media (orientation:landscape){
+            padding-top:10px;
+        }
+    }
+
+}
+
+.header-content {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint(medium){
+        justify-content: center;
+    }
+}
+
+.facebook-logo-img {
+    display: block;
+    height: 42px;
+    width:auto;
+
+    @include breakpoint(medium){
+        height:30px;
+        width:auto;
+    }
+
+    @include breakpoint(small){
+        @media (orientation:landscape){
+            height:22px;
+        }
+    }
+}
+
+.header-logo-img {
+    display: block;
+    height: 54px;
+
+    @include breakpoint(medium){
+        height:39px;
+        width:auto;
+    }
+
+    @include breakpoint(small){
+        @media (orientation:landscape){
+            height:20px;
+        }
+    }
+}
+
+.header-logo-wrapper {
+    position: relative;
+    display: block;
+    padding-left: 8px;
+    margin-left: 12px;
+
+    &::before {
+        content: '';
+        display: block;
+        top: 50%;
+        height: 38px;
+        margin-top: -19px;
+        position: absolute;
+        left: 0;
+        border-left: 1px solid $base-color;
+
+        @include breakpoint(medium){
+            height: 28px;
+            margin-top: -14px;
+        }
+
+        @include breakpoint(small){
+            @media (orientation:landscape){
+                height: 18px;
+                margin-top:-9px;
+            }
+        }
+    }
+}
+
+.facebook-logo-wrapper {
+    display: block;
+    transition: transform 400ms;
+    transform-origin:50% 50%;
+
+    &:hover{
+        transform: rotateZ(360deg);
+    }
+}

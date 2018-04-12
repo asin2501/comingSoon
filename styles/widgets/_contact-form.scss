@@ -1,0 +1,100 @@
+.contact-form {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(medium) {
+        flex-wrap: wrap;
+    }
+}
+
+.contact-form-line {
+    display: flex;
+    align-items: center;
+
+    * + * {
+        margin-left: 30px;
+    }
+
+    @include breakpoint(medium) {
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    @include breakpoint(small-tablet-portrait) {
+        text-align: center;
+    }
+}
+
+.contact-form-line + .contact-form-line {
+    margin-left: 30px;
+
+    @include breakpoint(medium) {
+        margin-left: 0;
+        margin-top: 20px;
+
+    }
+
+    @include breakpoint(small){
+        @media (orientation:landscape){
+            margin-top:8px;
+        }
+    }
+}
+
+.pre-form-btn-container {
+    transition: transform 450ms;
+    transform: translateY(0);
+
+    * + * {
+        margin-left: 30px;
+    }
+
+    .animated & {
+        transform: translateY(100%);
+
+    }
+
+    @include breakpoint(small-tablet-portrait) {
+        font-size: 10px;
+
+        .button {
+            font-size: 10px;
+            line-height: 28px;
+            height: 28px;
+            min-width:75px;
+        }
+
+        * + * {
+            margin-left: 10px;
+        }
+    }
+}
+
+.form-container {
+    position: static;
+    transition: transform 450ms 1000ms;
+    transform: translateY(100%);
+
+    .animated & {
+        transform: translateY(0);
+    }
+
+    @include breakpoint(small){
+        @media (orientation:landscape){
+            padding-bottom:10px;
+        }
+    }
+}
+
+.submit-result{
+    color: $base-color;
+
+    &.error{
+        color: red;
+    }
+    
+    @include breakpoint(medium){
+        text-align: center;
+    }
+}

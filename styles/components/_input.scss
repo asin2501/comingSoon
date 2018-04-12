@@ -1,0 +1,40 @@
+input[type="text"],input[type="email"],input[type="password"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height:42px;
+    box-sizing: border-box;
+    line-height:42px;
+    border: $base-color 1px solid;
+    border-radius:4px;
+    padding-left:5px;
+    padding-right:5px;
+    text-align: center;
+    display: block;
+    color: $base-color;
+    outline: none;
+    transition: border-color 200ms;
+    width:109px;
+
+    &.large{
+        width:290px;
+
+        @include breakpoint(medium){
+            width:248px;
+        }
+    }
+
+    @include placeholder{
+        color: $font-color;
+    }
+
+    &.error{
+        border-color: red;
+    }
+
+    @include breakpoint(small){
+        @media (orientation:landscape){
+            line-height:30px;
+            height:30px;
+        }
+    }
+}
